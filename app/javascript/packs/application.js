@@ -13,6 +13,7 @@ require('jquery-ui');
 import "bootstrap"
 import "../stylesheets/application"
 import $ from 'jquery';
+import "@fortawesome/fontawesome-free/js/all";
 
 global.$ = $
 global.jQuery = $

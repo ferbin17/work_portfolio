@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MyWebsite</title>
+    <title>Mohammed Ferbin</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,87 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top nav-color-override">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="http://placehold.it/150x50?text=Logo" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item">
+              <%= link_to "https://www.linkedin.com/in/iamferbin/", class: "nav-link waves-effect waves-light" do %>
+                <i class="fab fa-linkedin"></i>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "https://github.com/ferbin17", class: "nav-link waves-effect waves-light" do %>
+                <i class="fab fa-github"></i>
+              <% end %>
+            </li>
+            <% links = {"google-plus": "mailto:ferbin17@gmail.com",
+                        twitter: "https://twitter.com/ferbin17_mufc",
+                        instagram: "https://www.instagram.com/ferbin17_mufc/",
+                        facebook: "https://www.facebook.com/ferbin17/",
+                        whatsapp: "https://web.whatsapp.com/send?phone=919526405542"
+           } %>
+           <li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right dropdown-default"
+                aria-labelledby="navbarDropdownMenuLink-333">
+                <% links.each do |key, value| %>
+                  <%= link_to "#{value}", class: "dropdown-item" do %>
+                    <% text = key.class == String ? "Gmail" : key.capitalize %>
+                    <i class="fab fa-<%= key %>" aria-hidden="true"></i><%= text %>
+                  <% end %>
+                <% end %>
+              </div>
+            </li>
+            <li class="nav-item">
+              <%= link_to "#", class: "nav-link waves-effect waves-light" do %>
+                <%= image_tag "moon.svg" %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <footer>
+      <div class="container">
+      </div>
+    </footer>
   </body>
 </html>

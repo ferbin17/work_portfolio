@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+ nav.nav-color-override{
+   background-color: #95755B !important;
+ }
+
+ .navbar-dark .navbar-nav .nav-link{
+   color: white !important;
+ }
+
+ .nav-item.active{
+   background-color: #806E27 !important;
+ }
