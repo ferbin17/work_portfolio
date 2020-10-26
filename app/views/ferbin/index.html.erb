@@ -1,8 +1,68 @@
-<div id="cover"></div>
-<div id="about"></div>
-<div id="blog"></div>
-<div id="works"></div>
-<div id="experience"></div>
-<div id="education"></div>
-<div id="contact"></div>
-<div id="social-networks"></div>
+<div class="grid-container">
+
+  <div class="grid grid-odd about">
+    <div class="cover">
+      <%= image_tag "index-cover.jpg" %>
+    </div>
+    <h1>MOHAMMED FERBIN KARUMANNIL</h1>
+    <p class="quote">"Quote"</p>
+    <p class="short-about-me">In order to have a complete sentence, 
+      the sentence must have a minimum of three word types: a subject, a verb,
+      and an object. In most cases, the subject is a noun or a pronoun.
+      For example, the sentence "Jack loves candy" is a complete sentence
+      because it has all three elements needed to make a complete sentence.
+      Jack (the subject) loves (the verb) candy (the object).................
+    </p>
+    <p class="read-more">
+      <%= link_to "read more", "#", class: "read-more" %>
+    </p>
+  </div>
+  
+  <div class="grid blog grid-even">
+    <h1>RECENT POSTS</h1>
+    <div class="blog-grid-container">
+      <% ["JOB TITLE, COMPANY", "JOB TITLE, COMPANY", "JOB TITLE, COMPANY"].each do |blog_post| %>
+        <div class="blog-post-container blog-container-<%= cycle("1", "2", "3") -%>">
+          <div class="blog-post-date">Oct 20</div>
+          <div class="blog-post-header"><%= blog_post %></div>
+          <div class="blog-post">This is an item description in your CV. 
+            Concisely describe the project or experience listed. 
+            The most effective CVs give a clear snapshot of where you’re 
+            coming from and where you’re going in a way that’s easy for 
+            readers to scan quickly.
+          </div>
+          <div class="read-article">
+            <%= link_to "read full article", "#", class: "read-article" %>
+          </div>
+        </div>
+      <% end %>
+      <div class="blog-post-container read-more-blog blog-container-<%= cycle("1", "2", "3") -%>">
+        <div class="read-more-article">
+          <%= link_to "read more article", "#", class: "read-more-article" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid grid-odd works"></div>
+  <div class="grid grid-even experience"></div>
+  <div class="grid grid-odd education"></div>
+  <div class="grid grid-even contact"></div>
+  <div class="grid grid-odd social-networks"></div>
+</div>
+<script>
+  $('.blog-post-container').on("mouseenter", function(){
+    $(this).css("filter", "blur(5px)");
+  })
+  
+  $('.blog-post-container').on("mouseover", function(){
+    $(this).css("filter", "blur(5px)");
+  })
+  
+  $('.blog-post-container').on("mouseleave", function(){
+    $(this).css("filter", "blur(0px)");
+  })
+  
+  $('.blog-post-container').on("mouseout", function(){
+    $(this).css("filter", "blur(0px)");
+  })
+</script>

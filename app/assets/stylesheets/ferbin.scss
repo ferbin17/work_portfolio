@@ -1,3 +1,150 @@
 // Place all the styles related to the Ferbin controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// Grid
+.grid-container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.grid{
+  width: 100%;
+  padding: 5%;
+}
+
+.grid-odd{
+  background-color: #fff;
+}
+
+.grid-even{
+  background-color: #F4F6F9;
+}
+
+// About
+.grid.about .cover{
+  margin-bottom: 5%;
+}
+
+.grid.about .cover img{
+  width: 100%;
+}
+
+.grid.about h1{
+  text-align: center;
+  font-size: 5em;
+  text-transform: uppercase;
+  color: rgb(56, 47, 29);
+  font-weight: lighter;
+}
+
+.grid.about p{
+  text-align: center;
+  color: rgb(56, 47, 29);
+}
+
+.grid.about p.quote{
+  font-size: 2em;
+}
+
+.grid.about p.short-about-me{
+  font-size: 1em;
+  font-weight: lighter;
+  line-height: 2.5em;
+  margin-bottom: 5%;
+}
+
+.grid.about a.read-more{
+  color: rgb(56, 47, 29);
+  font-size: 1em;
+  font-weight: lighter;
+}
+
+.grid.about a.read-more:hover{
+  transition: rgb(128, 110, 39) 0.4s ease 0s;
+}
+
+// Blog
+.grid.blog h1{
+  text-align: center;
+  margin-bottom: 5%;
+  color: #806E27;
+}
+
+.grid.blog .blog-grid-container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid.blog .blog-post-container{
+  text-align: left;
+  padding: 2.5% 5%;
+}
+
+.grid.blog .blog-post-container:hover{
+  cursor: pointer;
+}
+
+.grid.blog .blog-post-container:nth-child(odd){
+  padding-right: 2.5%;
+}
+
+
+.grid.blog .blog-post-container:nth-child(even){
+  padding-left: 2.5%;
+}
+
+.grid.blog .blog-post-date, .grid.blog .blog-post-header, .grid.blog .blog-post{
+  width: 100%;
+  float: left;
+  padding: 1% 10%;
+  color: #fff;
+}
+
+.grid.blog .blog-post-date{
+  font-size: 1em;
+  padding-top: 10%;
+}
+
+.grid.blog .blog-post-header{
+  font-size: 2em;
+}
+
+.grid.blog .blog-post{
+  font-size: 1em;
+  padding-bottom: 10%;
+}
+
+.grid.blog .blog-container-1 .blog-post-date, .grid.blog .blog-container-1 .blog-post-header,
+.grid.blog .blog-container-1 .blog-post, .grid.blog .blog-container-1 div.read-more-article{
+  background-color: #382F1D;
+}
+
+.grid.blog .blog-container-2 .blog-post-date, .grid.blog .blog-container-2 .blog-post-header,
+.grid.blog .blog-container-2 .blog-post, .grid.blog .blog-container-2 div.read-more-article{
+  background-color: #806E27;
+}
+
+.grid.blog .blog-container-3 .blog-post-date, .grid.blog .blog-container-3 .blog-post-header,
+.grid.blog .blog-container-3 .blog-post, .grid.blog .blog-container-3 div.read-more-article{
+  background-color: #95755B;
+}
+
+.grid.blog .read-article{
+  display: none;
+}
+
+.grid.blog .read-more-blog div.read-more-article{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.grid.blog .read-more-blog a.read-more-article{
+  width: 100%;
+  text-align: center;
+}

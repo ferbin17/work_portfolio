@@ -14,13 +14,13 @@
  *= require_self
  */
  nav.nav-color-override{
-   background-color: #95755B !important;
+   background-color: #fff !important;
  }
 
  .navbar-dark .navbar-nav .nav-link{
-   color: white !important;
+   color: #000 !important;
  }
 
  .nav-item.active{
-   background-color: #806E27 !important;
+   background-color: #95755B !important;
  }
