@@ -25,7 +25,7 @@ fi
 # create sub directory for todoapp if needed
 directory=~/data/my_website/vendor/engines/todoapp
 if [ -d $directory ]; then
-  subdirectory=~/mf17/my_website/log/todoapp
+  subdirectory=~/data/my_website/log/todoapp
   if [ ! -d $subdirectory ]; then
     mkdir $subdirectory
   fi
@@ -34,7 +34,7 @@ fi
 # create sub directory and log files for share_files_app if needed
 directory=~/data/my_website/vendor/engines/share_files_app
 if [ -d $directory ]; then
-  subdirectory=~/mf17/my_website/log/share_file_app
+  subdirectory=~/data/my_website/log/share_file_app
   if [ ! -d $subdirectory ]; then
     mkdir $subdirectory
   fi
