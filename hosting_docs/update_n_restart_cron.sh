@@ -47,6 +47,6 @@ RAILS_ENV=production ~/.rvm/wrappers/ruby-2.7.0@emset-name/rake assets:precompil
 RAILS_ENV=production ~/.rvm/wrappers/ruby-2.7.0@emset-name/rake db:migrate
 RAILS_ENV=production ~/.rvm/wrappers/ruby-2.7.0@emset-name/rake db:seed
 sudo /usr/bin/systemctl restart my_website.service
-
+sudo /usr/bin/systemctl restart sidekiq.service
 echo -e "finished the main app cronjob at "`date` >> $FILE
 echo -e "" >> $FILE

@@ -1,0 +1,11 @@
+---
+:concurrency: 5
+staging:
+  :concurrency: 10
+production:
+  :concurrency: 5
+:queues:
+  - sharefilesapp
+  - critical
+  - default
+  - low
