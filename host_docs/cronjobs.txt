@@ -1,0 +1,1 @@
+42 18 * * * ~/mf17/my_website/update_n_restart.sh >> ~/mf17/my_website/log/main_app/main_app_cron.log 2>&1

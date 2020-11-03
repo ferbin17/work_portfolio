@@ -7,7 +7,7 @@ if [ ! -d $directory ]; then
 fi
 
 # create log file for cron if needed 
-CRON_FILE=~/data/my_website/log/main_app/my_website_cron.log
+CRON_FILE=~/data/my_website/log/main_app/main_app_cron.log
 if test -f "$CRON_FILE"; then
    :
 else
@@ -15,13 +15,13 @@ else
 fi
 
 # create log file for script if needed
-FILE=~/data/my_website/log/main_app/my_website.log
+FILE=~/data/my_website/log/main_app/main_app.log
 if test -f "$FILE"; then
    :
 else
    touch $FILE
 fi
-echo -e "started the my_website cronjob at "`date`>> $FILE
+echo -e "started the main app cronjob at "`date`>> $FILE
 
 # Update code
 cd ~/data/my_website/ && git checkout main && git pull
@@ -48,5 +48,5 @@ RAILS_ENV=production ~/.rvm/wrappers/ruby-2.7.0@emset-name/rake db:migrate
 RAILS_ENV=production ~/.rvm/wrappers/ruby-2.7.0@emset-name/rake db:seed
 sudo /usr/bin/systemctl restart my_website.service
 
-echo -e "finished the website cronjob at "`date` >> $FILE
+echo -e "finished the main app cronjob at "`date` >> $FILE
 echo -e "" >> $FILE
