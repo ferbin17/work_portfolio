@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     # mount Todoapp::Engine => "/"
   end
   
-  constraints subdomain: 'share_files_app' do
+  constraints subdomain: 'sharefilesapp' do
     # mount ShareFilesApp::Engine => "/"
   end
 
