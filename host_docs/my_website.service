@@ -20,18 +20,22 @@ After=network.target
 Type=forking
 
 # Preferably configure a non-privileged user
-User=ubuntu
+User=deploy
 
 # The path to the your application code root directory.
-WorkingDirectory=/home/ubuntu/data/my_website
+WorkingDirectory=/home/deploy/data/my_website
 
 # Helpful for debugging socket activation, etc.
 # Environment=PUMA_DEBUG=1
 
 # an absolute URL to puma. For example /usr/local/bin/puma
-ExecStart=/usr/local/rvm/wrappers/ruby-2.7.0@my_website/puma -C /home/ubuntu/data/my_website/config/puma.rb ../config.ru
+ExecStart=/usr/local/rvm/wrappers/ruby-2.7.0@gemset-name/puma -C /home/deploy/data/my_website/config/puma.rb ../config.ru
+PIDFile=/home/deply/data/my_website/shared/pids/puma.pid
 
 Restart=always
 
 [Install]
 WantedBy=multi-user.target
+
+
+
