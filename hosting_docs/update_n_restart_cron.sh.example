@@ -35,11 +35,11 @@ cd ../..
 #call rake task
 ~/.rvm/wrappers/ruby-2.7.0@emset-name/bundle install
 directory=~/data/my_website/vendor/engines/todoapp
-if [ ! -d $directory ]; then
+if [ -d $directory ]; then
   RAILS_ENV=production ~/.rvm/wrappers/ruby-2.7.0@gemset-name/rake todoapp:install:migrations
 fi
 directory=~/data/my_website/vendor/engines/share_files_app
-if [ ! -d $directory ]; then
+if [ -d $directory ]; then
   RAILS_ENV=production ~/.rvm/wrappers/ruby-2.7.0@gemset-name/rake share_files_app:install:migrations
 fi
 RAILS_ENV=production ~/.rvm/wrappers/ruby-2.7.0@gemset-name/rake assets:clobber
