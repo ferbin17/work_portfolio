@@ -1,0 +1,21 @@
+<%= javascript_pack_tag 'work' %>
+<% if @works %>
+  <div class="grid grid-odd works">
+    <h1>WORKS</h1>
+    <div class="work-grid-container">
+      <% @works.each do |app_name, details| %>
+        <div class="work-post-container work-container-<%= cycle("1", "2", "3") -%>">
+          <div class="work-content">
+            <div class="work-post-header"><%= app_name.upcase %></div>
+            <div class="work-post">
+              <%= details["description"] %>
+            </div>
+          </div>
+          <div class="read-article">
+            <%= link_to "Go to app", details["url"], class: "read-article", target: "_blank" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
