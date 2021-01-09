@@ -1,0 +1,23 @@
+todo app:
+  description: "Web application that lets you create todos/tasks and share it with other users. Shared users can change the progress, make comments on todos/tasks.
+  User owner has the privilege to change the statsu of tods/tasks to active or inactive. User needs to register to the app"
+  url: http://todoapp.mfcreationz.xyz
+sharefiles app:
+  description: "Web application that lets you send large size files to friends with mail. File will be stored only for 7 days and will be deleted automatically after 7th day.
+  Both sender and receiver gets alert mails once files are sent and once the files is about to expire and deleted."
+  url: http://sharefilesapp.mfcreationz.xyz
+getart:
+  description: "An E-commerce application that lets you buy arts or hire artists. User can register as buyer or seller to buys or sell the arts. User can make order and also pay either online or
+  do payment directly to the seller. Customer can chat with the artists for dicussing the rate and arts they want to do(only for Freelancing artists)"
+  url: "#"
+delivery app:
+  description: "A web application that lets you buy products from merchant. User can register as buyer or seller to buys or sell the product. User can make order and track the status of order.
+  Merhcant can either accept or reject orders. Real time order status updation is done by action cable. Merchant/Customer gets alert on each order status updates."
+  url: "#"
+prediction app:
+  description: "A web application in which one user can create a group and add members to the group for conducting predict competetion for Football leagues. (Current only PL is available).
+  Score and Prediction point table will be auto updated after each game week. Group owner gets the csv file of predictions, calcualted scores and prediction point table after each game week."
+  url: http://predict.mfcreationz.xyz
+covid report app:
+  description: "A web application created for collecting daily covid case count. Application has feature to make reports for either each day or within time frame and also has the feature to export this report as CSV file."
+  url: "#"

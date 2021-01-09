@@ -17,3 +17,5 @@ import "@fortawesome/fontawesome-free/js/all";
 
 global.$ = $
 global.jQuery = $
+
+require("packs/main")

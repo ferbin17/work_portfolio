@@ -5,7 +5,7 @@ upstream app {
 
 server {
     listen 0.0.0.0;
-    server_name localhost;    
+    server_name localhost _;    
     
     root /home/ubuntu/REPO/public;    
     

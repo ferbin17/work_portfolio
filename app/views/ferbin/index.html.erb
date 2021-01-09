@@ -1,3 +1,6 @@
+<head>
+  <%= javascript_pack_tag 'index' %>
+</head>
 <div class="grid-container">
 
   <div class="grid grid-odd about">
@@ -5,64 +8,79 @@
       <%= image_tag "index-cover.jpg" %>
     </div>
     <h1>MOHAMMED FERBIN KARUMANNIL</h1>
-    <p class="quote">"Quote"</p>
-    <p class="short-about-me">In order to have a complete sentence, 
-      the sentence must have a minimum of three word types: a subject, a verb,
-      and an object. In most cases, the subject is a noun or a pronoun.
-      For example, the sentence "Jack loves candy" is a complete sentence
-      because it has all three elements needed to make a complete sentence.
-      Jack (the subject) loves (the verb) candy (the object).................
+    <p class="quote">"Ability is what you're capable of doing. Motivation determines what you do. Attitude determines how well you do it."</p>
+    <p class="short-about-me">Hi, I am <span>Mohammed Ferbin</span>, <span>full stack developer</span>. 
+      I have <span>1.5+ years</span> of industrial experience. I am very much familiar with <span>Ruby</span> language and
+      <span>Ruby on Rails</span> framework. I have used a few databases including <span>MySQL</span>, <span>MariaDB</span>, <span>PostgreSQL</span>, etc.
+      I have also worked with <span>ionic</span> framework. I have been through a lots of Ruby gems including the likes of 
+      <span>Devise</span>, <span>Sidekiq</span>, <span>Redis</span>, <span>Will paginate</span>, <span>Carrierwave</span>, <span>Gretel</span>, etc. I have good knowledge about 
+      <span>Rails Actioncable</span> and <span>AWS management</span>. I have a developed few hobby project of which some are hosted in <span>AWS</span> and 
+      included in the Works section. I likes to made new apps and read about latest changes in development technologies.
     </p>
     <p class="read-more">
       <%= link_to "read more", "#", class: "read-more" %>
     </p>
   </div>
   
-  <div class="grid blog grid-even">
-    <h1>RECENT POSTS</h1>
-    <div class="blog-grid-container">
-      <% ["JOB TITLE, COMPANY", "JOB TITLE, COMPANY", "JOB TITLE, COMPANY"].each do |blog_post| %>
-        <div class="blog-post-container blog-container-<%= cycle("1", "2", "3") -%>">
-          <div class="blog-post-date">Oct 20</div>
-          <div class="blog-post-header"><%= blog_post %></div>
-          <div class="blog-post">This is an item description in your CV. 
-            Concisely describe the project or experience listed. 
-            The most effective CVs give a clear snapshot of where you’re 
-            coming from and where you’re going in a way that’s easy for 
-            readers to scan quickly.
+  <% if @posts.present? %>
+    <div class="grid blog grid-even">
+      <h1>RECENT POSTS</h1>
+      <div class="blog-grid-container">
+        <% ["JOB TITLE, COMPANY", "JOB TITLE, COMPANY", "JOB TITLE, COMPANY"].each do |blog_post| %>
+          <div class="blog-post-container blog-container-<%= cycle("1", "2", "3") -%>">
+            <div class="blog-content">
+              <div class="blog-post-date">Oct 20</div>
+              <div class="blog-post-header"><%= blog_post %></div>
+              <div class="blog-post">
+                This is an item description in your CV. 
+                Concisely describe the project or experience listed. 
+                The most effective CVs give a clear snapshot of where you’re 
+                coming from and where you’re going in a way that’s easy for 
+                readers to scan quickly.
+              </div>
+            </div>  
+            <div class="read-article">
+              <%= link_to "read full article", "#", class: "read-article" %>
+            </div>
           </div>
-          <div class="read-article">
-            <%= link_to "read full article", "#", class: "read-article" %>
+        <% end %>
+        <div class="blog-post-container read-more-blog blog-container-<%= cycle("1", "2", "3") -%>">
+          <div class="read-more-article">
+            <%= link_to "read more article", "#", class: "read-more-article" %>
           </div>
-        </div>
-      <% end %>
-      <div class="blog-post-container read-more-blog blog-container-<%= cycle("1", "2", "3") -%>">
-        <div class="read-more-article">
-          <%= link_to "read more article", "#", class: "read-more-article" %>
         </div>
       </div>
     </div>
-  </div>
-  <div class="grid grid-odd works"></div>
+  <% end %>
+
+  <% if @works.present? %>
+    <div class="grid grid-odd works">
+      <h1>WORKS</h1>
+      <div class="work-grid-container">
+        <% @works.each do |app_name, details| %>
+          <div class="work-post-container work-container-<%= cycle("1", "2", "3") -%>">
+            <div class="work-content">
+              <div class="work-post-header"><%= app_name.upcase %></div>
+              <div class="work-post">
+                <%= details["description"] %>
+              </div>
+            </div>
+            <div class="read-article">
+              <%= link_to "Go to app", details["url"], class: "read-article", target: "_blank" %>
+            </div>
+          </div>
+        <% end %>
+        <div class="work-post-container read-more-work work-container-<%= cycle("1", "2", "3") -%>">
+          <div class="read-more-article">
+            <%= link_to "View more works", ferbin_works_path, class: "read-more-article" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  
   <div class="grid grid-even experience"></div>
   <div class="grid grid-odd education"></div>
   <div class="grid grid-even contact"></div>
   <div class="grid grid-odd social-networks"></div>
 </div>
-<script>
-  $('.blog-post-container').on("mouseenter", function(){
-    $(this).css("filter", "blur(5px)");
-  })
-  
-  $('.blog-post-container').on("mouseover", function(){
-    $(this).css("filter", "blur(5px)");
-  })
-  
-  $('.blog-post-container').on("mouseleave", function(){
-    $(this).css("filter", "blur(0px)");
-  })
-  
-  $('.blog-post-container').on("mouseout", function(){
-    $(this).css("filter", "blur(0px)");
-  })
-</script>
